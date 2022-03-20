@@ -12,7 +12,7 @@ import { WordsService } from '@services/words.service';
 export class SopadeletrasComponent implements OnInit {
   @Input() rows: number = 20;
   @Input() cols: number = 20;
-  @Input() numberMaxOfWords: number = 20;
+  @Input() numberMaxOfWords: number = 10;
 
   public matrix: Cell[][] = [];
   public wordsSetted: Word[] = [];
