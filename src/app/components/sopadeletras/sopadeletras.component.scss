@@ -1,0 +1,62 @@
+@import 'variables';
+.matrix{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    flex-direction: column;
+    border: 1px solid black;
+
+    .matrix_row{
+        display: flex;
+        width: 100%;
+        flex: 1;
+        .matrix_cell{
+            text-align: center;
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            .letter{
+                text-transform: uppercase;
+                position: absolute;
+                &.used{
+                    color: red;
+                }
+            }
+            &:hover{
+                background-color: rgba($color: #a01f1f, $alpha: 1.0);
+                .letter{
+                    color: white;
+                }
+            }
+            &.active{
+                background-color: rgba($color: #a01f1f, $alpha: 0.3);
+            }
+            &.success{
+                background-color: rgba($color: #48be75, $alpha: 1.0);
+            }
+        }
+        .matrix_cell:before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+    }
+}
+.search-words-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: $space-md;
+    margin-top: $space-md;
+    flex-wrap: wrap;
+    .word{
+        margin-left: $space-xs;
+        margin-right: $space-xs;
+        &.completed{
+            text-decoration: line-through;
+        }
+    }
+}
